@@ -1077,3 +1077,122 @@ footer a {
     text-align: center;
   }
 }
+
+/* ── Tech Stack Section ── */
+/* .tech-stack-section {
+  margin-top: 0.1px;
+} */
+
+.tech-stack-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #e8c97e;
+  margin-bottom: 36px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tech-stack-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(232, 201, 126, 0.35) 0%,
+    transparent 100%
+  );
+}
+
+.tech-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(232, 201, 126, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(8px);
+}
+
+.tech-cat {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: start;
+  gap: 24px;
+  padding: 28px 32px;
+  border-bottom: 1px solid rgba(232, 201, 126, 0.08);
+  transition: background 0.25s ease;
+}
+.tech-cat:last-child {
+  border-bottom: none;
+}
+.tech-cat:hover {
+  background: rgba(232, 201, 126, 0.04);
+}
+
+.tech-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 4px;
+}
+.tech-cat-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+.tech-cat-name {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(232, 201, 126, 0.7);
+  font-weight: 500;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-pill {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: rgba(232, 201, 126, 0.08);
+  border: 1px solid rgba(232, 201, 126, 0.18);
+  color: rgba(240, 235, 220, 0.85);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+.tech-pill:hover {
+  background: rgba(232, 201, 126, 0.16);
+  border-color: rgba(232, 201, 126, 0.45);
+  color: #e8c97e;
+  transform: translateY(-1px);
+}
+.tech-pill.soft {
+  background: rgba(160, 200, 255, 0.06);
+  border-color: rgba(160, 200, 255, 0.18);
+  color: rgba(200, 225, 255, 0.8);
+}
+.tech-pill.soft:hover {
+  background: rgba(160, 200, 255, 0.14);
+  border-color: rgba(160, 200, 255, 0.4);
+  color: #a8d4ff;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tech-cat {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 20px 20px;
+  }
+}
