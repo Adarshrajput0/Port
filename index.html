@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adarsh Kumar — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- NAV -->
+    <nav>
+      <a href="#" class="nav-logo">Adarsh Kumar</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-noise"></div>
+      <div class="hero-grid-lines"></div>
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag">Available for opportunities</div>
+          <h1 class="hero-name">Adarsh<br /><span>Kumar</span></h1>
+          <p class="hero-role">
+            <strong>Software Developer</strong> <strong>&</strong>
+            <strong>Full Stack Developer</strong>
+          </p>
+          <p class="hero-desc">
+            I’m a Computer Science student and aspiring software developer
+            passionate about building scalable web applications and solving
+            real-world problems through code. I enjoy creating clean digital
+            experiences while continuously learning modern technologies and
+            development practices.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn-primary">View My Work</a>
+            <a href="#contact" class="btn-outline">Get In Touch</a>
+          </div>
+        </div>
+
+        <!-- PROFILE PHOTO -->
+        <div class="hero-photo-wrap">
+  <input type="file" id="photoInput" accept="image/*" />
+  <div class="profile-pic-container">          <!-- ✅ stays open -->
+    <div class="profile-pic-ring"></div>
+    <div class="profile-pic-ring-mask"></div>
+    <img 
+      src="images/profile.jpg"
+      class="profile-pic-img"
+      alt="Adarsh Rajput"
+    />
+            
+            <div class="profile-pic-overlay" id="picOverlay">
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#e8c97e"
+                stroke-width="1.5"
+              >
+                <!-- <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /> -->
+                <!-- <polyline points="17 8 12 3 7 8" /> -->
+                <!-- <line x1="12" y1="3" x2="12" y2="15" /> -->
+              </svg>
+              
+            </div>
+          </div>
+          <div class="photo-badge">
+            <svg width="10" height="10" viewBox="0 0 10 10">
+              <circle cx="5" cy="5" r="4" fill="#e8c97e" />
+            </svg>
+            Open to Work
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll">Scroll to explore</div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about reveal" id="about">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">The story so far.</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I’m Adarsh Rajput, a passionate Computer Science student and
+            aspiring Software Engineer who loves building impactful digital
+            experiences through code and creativity. My journey in technology
+            started with curiosity and evolved into a deep passion for software
+            development, problem solving, and continuous learning. I specialize
+            in web development, programming, and creating responsive
+            applications using modern technologies. Alongside development, I
+            actively solve coding problems and explore concepts in Data
+            Structures, Algorithms, Operating Systems, Computer Networks, and
+            Backend Development to strengthen my technical foundation. Beyond
+            coding, I’m highly driven by creativity and personal growth. I enjoy
+            designing clean user experiences, building personal projects, and
+            constantly improving my skills through real-world practice. I
+            believe consistency, discipline, and curiosity are the keys to
+            becoming a great engineer. Currently, I’m focused on becoming a
+            strong full-stack developer while building projects that solve
+            real-world problems and help me grow both technically and
+            professionally. My goal is to create meaningful products, contribute
+            to innovative teams, and continuously evolve as a developer and
+            creator.
+          </p>
+         
+          </p>
+          <div class="about-values">
+            <div class="value-card">
+              <div class="value-icon">🎯</div>
+              <div class="value-title">Impact-Driven</div>
+              <div class="value-desc">
+                Focused on building real-world solutions that create meaningful impact through technology, innovation, and user-focused development.
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🛠️</div>
+              <div class="value-title">Builder Mindset</div>
+              <div class="value-desc">
+                Passionate about transforming ideas into fully functional products with strong ownership, problem-solving, and full-stack development skills.
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">💡</div>
+              <div class="value-title">Problem Solver</div>
+              <div class="value-desc">
+                Enjoy solving complex challenges through logical thinking, scalable system design, and efficient development practices while continuously improving technical expertise.
+              </div>
+            </div>
+            <div class="value-card">
+              <div class="value-icon">🚀</div>
+              <div class="value-title">Continuous Growth</div>
+              <div class="value-desc">
+                Constantly learning modern technologies, improving development skills, participating in hackathons, and building projects that push creativity and innovation forward.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-right">
+          <ul class="achievement-list">
+            <li>
+              <div class="ach-icon">🏆</div>
+              <div class="ach-body">
+                <div class="ach-title">Founder & Sole Developer – Rental Booking Platform</div>
+                <div class="ach-desc">
+                  Founder & Sole Developer of a full-stack Rental Booking Platform inspired by Airbnb, developed for a real business client to streamline property listing and booking management, helping improve operational efficiency and user experience.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="ach-icon">🏆</div>
+              <div class="ach-body">
+                <div class="ach-title">Creator & Lead Developer – Campus Micro Job Portal</div>
+                <div class="ach-desc">
+                  Creator & Lead Developer of the Campus Micro Job Platform, a web application designed to connect students with short-term campus-based job opportunities, featuring authentication systems, backend data management, and responsive full-stack architecture.
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="ach-icon">📈</div>
+              <div class="ach-body">
+                <div class="ach-title">Hackathon Participation & Technical Innovation</div>
+                <div class="ach-desc">
+                  Actively contributed to hackathon projects by designing scalable web solutions, implementing backend functionalities, and presenting impactful ideas in competitive development environments.
+                </div>
+              </div>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+<section class="experience reveal" id="education">
+  <div class="section-label">Education</div>
+  <h2 class="section-title">My academic journey.</h2>
+  <p class="section-sub">
+    Building a strong foundation in computer science, software development,
+    and problem solving through academics and continuous self-learning.
+  </p>
+
+  <div class="exp-list">
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2023 — 2027</div>
+        <div class="exp-company">Parul University</div>
+      </div>
+
+      <div class="exp-body">
+        <div class="exp-role">
+          Bachelor of Technology (B.Tech) — Computer Science & Engineering
+        </div>
+
+        <div class="exp-desc">
+          Pursuing a degree in Computer Science and Engineering with focus on
+          software development, data structures & algorithms, operating systems,
+          computer networks, database management systems, and full-stack web
+          development. Actively building real-world projects and improving
+          problem-solving skills through continuous practice and self-learning.
+        </div>
+
+        <div class="exp-tags">
+          <span class="tag accent">B.Tech CSE</span>
+          <span class="tag">DSA</span>
+          <span class="tag">Web Development</span>
+          <span class="tag">Problem Solving</span>
+          <span class="tag">Full Stack</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2020 — 2022</div>
+        <div class="exp-company">Higher Secondary Education</div>
+      </div>
+
+      <div class="exp-body">
+        <div class="exp-role">Science Stream (PCM)</div>
+
+        <div class="exp-desc">
+          Completed higher secondary education with a focus on Physics,
+          Chemistry, and Mathematics, developing analytical thinking,
+          logical reasoning, and quantitative problem-solving skills that
+          later strengthened my interest in programming and technology.
+        </div>
+
+        <div class="exp-tags">
+          <span class="tag accent">PCM</span>
+          <span class="tag">Mathematics</span>
+          <span class="tag">Analytical Thinking</span>
+          <span class="tag">Logic Building</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-meta">
+        <div class="exp-date">2020</div>
+        <div class="exp-company">Secondary Education</div>
+      </div>
+
+      <div class="exp-body">
+        <div class="exp-role">10th — General Studies</div>
+
+        <div class="exp-desc">
+          Completed secondary education while developing a strong interest in
+      technology, logical thinking, and problem-solving. Built a solid academic
+      foundation in mathematics, science, and communication skills that later
+      inspired my journey into computer science and software development.
+        </div>
+
+        <div class="exp-tags">
+          <span class="tag accent">General Studies</span>
+          <span class="tag">Mathematics</span>
+          <span class="tag">Science</span>
+          <span class="tag">Communication</span>
+          <span class="tag">Social Studies</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- SKILLS -->
+    <section class="skills reveal" id="skills">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">What I bring.</h2>
+      <p class="section-sub">
+        A blend of technical skills and creative capabilities that power both
+        products and content.
+      </p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card-icon">💻</div>
+          <div class="skill-card-title">Full Stack Development</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>MERN Stack</span><span>90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Backend Development</span><span>92%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 92%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>API Integration</span><span>95%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">🧠</div>
+          <div class="skill-card-title">Problem Solving</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Data Structures & Algorithms</span><span>88%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Logical Thinking</span><span>90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 88%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>System Design Basics</span><span>95%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 82%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">🚀</div>
+          <div class="skill-card-title">Product Building</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Product Development</span><span>80%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Full Project Ownership</span><span>87%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 87%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Scalable Architecture</span><span>90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-card-icon">🤝</div>
+          <div class="skill-card-title">Leadership</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Communication</span><span>93%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 93%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Team Collaboration</span><span>90%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label">
+                <span>Ownership & Drive</span><span>95%</span>
+              </div>
+              <div class="skill-bar-track">
+                <div class="skill-bar-fill" style="width: 95%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- PROJECTS -->
+<section class="projects reveal" id="projects">
+  <div class="section-label">Work</div>
+  <h2 class="section-title">Selected projects.</h2>
+  <p class="section-sub">
+    A snapshot of things I've built, launched, and shipped.
+  </p>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <div class="project-thumb pt-1">💼</div>
+
+      <div class="project-body">
+        <div class="project-number">01 · Full Stack</div>
+
+        <div class="project-name">
+          Campus Micro Job Platform
+        </div>
+
+        <div class="project-desc">
+          Built a full-stack web platform connecting students with short-term
+          campus-based job opportunities. Implemented authentication, job
+          posting, application management, and responsive UI for seamless user
+          experience.
+        </div>
+
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="tag">MERN</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">React</span>
+            <span class="tag">Express</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">Authentication</span>
+          </div>
+
+          <a
+            href="https://github.com/Adarshrajput0/Campus-job"
+            target="_blank"
+            class="project-arrow"
+          >
+            ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <div class="project-thumb pt-2">🏠</div>
+
+      <div class="project-body">
+        <div class="project-number">02 · SaaS / Booking</div>
+
+        <div class="project-name">
+          Rental Booking Platform
+        </div>
+
+        <div class="project-desc">
+          Developed a scalable property rental and booking platform inspired by
+          Airbnb for a real business client. Designed responsive interfaces and
+          backend systems for property listing and booking management.
+        </div>
+
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="tag">Full Stack</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">React</span>
+            <span class="tag">Express</span>
+            <span class="tag">Booking System</span>
+          </div>
+
+          <a
+            href="https://airbnb-powi.onrender.com"
+            target="_blank"
+            class="project-arrow"
+          >
+            ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <div class="project-thumb pt-3">💬</div>
+
+      <div class="project-body">
+        <div class="project-number">03 · Real-Time Communication</div>
+
+        <div class="project-name">
+          Chatiffy – Real-Time Chat Application
+        </div>
+
+        <div class="project-desc">
+          Developed a real-time messaging platform enabling seamless one-to-one
+          communication with instant message delivery and responsive user
+          experience. Implemented authentication, real-time socket communication,
+          and modern UI components to create a fast and interactive chat system.
+        </div>
+
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="tag">Socket.IO</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">Authentication</span>
+            <span class="tag">Real-Time Chat</span>
+          </div>
+
+          <a
+            href="https://chatifyy-youandi.onrender.com/"
+            target="_blank"
+            class="project-arrow"
+          >
+            ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <div class="project-thumb pt-4">🧠</div>
+
+      <div class="project-body">
+        <div class="project-number">04 · Problem Solving</div>
+
+        <div class="project-name">
+          DSA & Competitive Programming
+        </div>
+
+        <div class="project-desc">
+          Actively solving Data Structures and Algorithms problems to strengthen
+          problem-solving ability, logical thinking, and coding efficiency while
+          exploring optimized approaches and scalable solutions.
+        </div>
+
+        <div class="project-footer">
+          <div class="project-stack">
+            <span class="tag">DSA</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Java</span>
+            <span class="tag">C++</span>
+            <span class="tag">Competitive Programming</span>
+          </div>
+
+          <a
+            href="https://leetcode.com/u/Adarsh_Rajput/"
+            target="_blank"
+            class="project-arrow"
+          >
+            ↗
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+   <!-- CREATOR / EXTRA SECTION -->
+<section class="creator reveal" id="creator">
+  <div class="section-label">Journey</div>
+
+  <h2 class="section-title">Beyond development.</h2>
+
+  <p class="section-sub">
+    Constantly learning, building, experimenting, and growing through real-world projects and development experiences.
+  </p>
+
+  <div class="creator-inner">
+
+    <!-- LEFT STATS -->
+    <div class="creator-stats-grid">
+
+      <div class="cstat">
+        <div class="cstat-num">10+</div>
+        <div class="cstat-label">Projects Built</div>
+      </div>
+
+      <div class="cstat">
+        <div class="cstat-num">300+</div>
+        <div class="cstat-label">DSA Problems</div>
+      </div>
+
+      <div class="cstat">
+        <div class="cstat-num">🏆</div>
+        <div class="cstat-label">Hackathons</div>
+      </div>
+
+      <div class="cstat">
+        <div class="cstat-num">∞</div>
+        <div class="cstat-label">Learning Mindset</div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="creator-text">
+
+      <h3>
+        Full Stack Developer &<br />
+        Problem Solver
+      </h3>
+
+      <p>
+        I enjoy building scalable web applications, solving real-world problems,
+        and continuously improving my development skills through hands-on
+        projects and practical learning. My journey in tech is driven by
+        curiosity, creativity, and the desire to create impactful digital
+        experiences.
+      </p>
+
+      <p>
+        Beyond development, I actively explore Data Structures & Algorithms,
+        backend engineering, system design concepts, and modern web technologies
+        while participating in hackathons and collaborative projects that push
+        my problem-solving abilities further.
+      </p>
+
+      <a href="#contact" class="btn-outline">
+        Let's Build Together
+      </a>
+
+    </div>
+  </div>
+</section>
+
+    <!-- CONTACT -->
+    <section class="contact reveal" id="contact">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let's connect.</h2>
+      <p class="section-sub">
+        Whether it's a collaboration, an opportunity, or just a hello — I'd love
+        to hear from you.
+      </p>
+      <div class="contact-inner">
+        <div class="contact-links">
+          <a
+            href="www.linkedin.com/in/adarsh-rajput06"
+            target="_blank"
+            class="contact-link"
+          >
+            <div class="contact-link-left">
+              <div class="contact-link-icon">💼</div>
+              <div>
+                <div class="contact-link-title">LinkedIn</div>
+                <div class="contact-link-sub">
+                  www.linkedin.com/in/adarsh-rajput06
+                </div>
+              </div>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a
+            href="https://github.com/Adarshrajput0"
+            target="_blank"
+            class="contact-link"
+          >
+            <div class="contact-link-left">
+              <div class="contact-link-icon">⌨️</div>
+              <div>
+                <div class="contact-link-title">GitHub</div>
+                <div class="contact-link-sub">https://github.com/Adarshrajput0</div>
+              </div>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a
+            href="https://adarshrajput0.github.io/New-Portfolio/"
+            target="_blank"
+            class="contact-link"
+          >
+            <div class="contact-link-left">
+              <div class="contact-link-icon">🌐</div>
+              <div>
+                <div class="contact-link-title">Previous Portfolio</div>
+                <div class="contact-link-sub">
+                  adarshrajput0.github.io/New-Portfolio
+                </div>
+              </div>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+          <a href="mailto:adarshrajput2931@gmail.com" class="contact-link">
+            <div class="contact-link-left">
+              <div class="contact-link-icon">✉️</div>
+              <div>
+                <div class="contact-link-title">Email</div>
+                <div class="contact-link-sub">Drop me a message anytime</div>
+              </div>
+            </div>
+            <span class="contact-link-arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <span>© 2025 Adarsh Rajput. All rights reserved.</span>
+      <span
+        >Designed with intent. Built with care.
+        <a href="#">Back to top ↑</a></span
+      >
+    </footer>
+
+    <script>
+      // Profile photo upload
+      const photoInput = document.getElementById("photoInput");
+      const profileImg = document.getElementById("profileImg");
+      const picPlaceholder = document.getElementById("picPlaceholder");
+      photoInput.addEventListener("change", function () {
+        const file = this.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          profileImg.src = e.target.result;
+          profileImg.style.display = "block";
+          picPlaceholder.style.display = "none";
+        };
+        reader.readAsDataURL(file);
+      });
+
+      // Custom cursor
+      const cursor = document.getElementById("cursor");
+      const ring = document.getElementById("cursorRing");
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0;
+      document.addEventListener("mousemove", (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+      });
+      function animateCursor() {
+        rx += (mx - rx) * 0.15;
+        ry += (my - ry) * 0.15;
+        cursor.style.left = mx + "px";
+        cursor.style.top = my + "px";
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+
+      // Reveal on scroll
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      reveals.forEach((el) => observer.observe(el));
+
+      // Skill bar animation
+      const barObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.querySelectorAll(".skill-bar-fill").forEach((bar) => {
+                bar.classList.add("animate");
+              });
+            }
+          });
+        },
+        { threshold: 0.3 },
+      );
+      document
+        .querySelectorAll(".skill-card")
+        .forEach((el) => barObserver.observe(el));
+
+      // Smooth nav active
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        nav.style.boxShadow =
+          window.scrollY > 60 ? "0 4px 40px rgba(0,0,0,0.4)" : "none";
+      });
+    </script>
+  </body>
+</html>
