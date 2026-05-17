@@ -21,9 +21,7 @@
     <!-- Particle Canvas -->
     <canvas id="particleCanvas"></canvas>
 
-    <!-- Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+
 
     <!-- Progress Bar -->
     <div id="progressBar"></div>
@@ -60,13 +58,12 @@
       <a href="#" class="nav-logo">Adarsh Kumar</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div style="display:flex; align-items:center; gap:1rem;">
-        <a href="#contact" class="nav-cta">Hire Me</a>
+        <a href="#contact" class="nav-cta">Contact Me</a>
         <button class="hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -1250,6 +1247,12 @@ with Effective Insights
     </footer>
 
     <script>
+      // Global interactive coordinates initialized to screen center
+      let mx = window.innerWidth / 2;
+      let my = window.innerHeight / 2;
+      let rx = mx;
+      let ry = my;
+
       /* ─── PARTICLE CANVAS ─── */
       const canvas = document.getElementById('particleCanvas');
       const ctx = canvas.getContext('2d');
@@ -1277,6 +1280,20 @@ with Effective Insights
         update() {
           this.x += this.speedX;
           this.y += this.speedY;
+
+          // Mouse Repulsion
+          if (mx > 0 && my > 0) {
+            const dx = mx - this.x;
+            const dy = my - this.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 140) {
+              const force = (140 - dist) / 140;
+              const angle = Math.atan2(dy, dx);
+              this.x -= Math.cos(angle) * force * 1.6;
+              this.y -= Math.sin(angle) * force * 1.6;
+            }
+          }
+
           if (this.y < -5 || this.x < -5 || this.x > canvas.width + 5) this.reset();
         }
         draw() {
@@ -1287,31 +1304,57 @@ with Effective Insights
         }
       }
       for (let i = 0; i < 90; i++) particles.push(new Particle());
+
+      function drawConstellations() {
+        for (let i = 0; i < particles.length; i++) {
+          const p1 = particles[i];
+          
+          // Connect to mouse if close
+          if (mx > 0 && my > 0) {
+            const mdx = p1.x - mx;
+            const mdy = p1.y - my;
+            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (mdist < 120) {
+              const alpha = (120 - mdist) / 120 * 0.12;
+              ctx.strokeStyle = `rgba(232, 201, 126, ${alpha})`;
+              ctx.lineWidth = 0.6;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(mx, my);
+              ctx.stroke();
+            }
+          }
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 85) {
+              const alpha = (85 - dist) / 85 * 0.07;
+              ctx.strokeStyle = `rgba(232, 201, 126, ${alpha})`;
+              ctx.lineWidth = 0.4;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
       function animateParticles() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         particles.forEach(p => { p.update(); p.draw(); });
+        drawConstellations();
         requestAnimationFrame(animateParticles);
       }
       animateParticles();
 
-      /* ─── CUSTOM CURSOR ─── */
-      const cursor = document.getElementById('cursor');
-      const ring = document.getElementById('cursorRing');
-      let mx = 0, my = 0, rx = 0, ry = 0;
-      document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
-      function animateCursor() {
-        rx += (mx - rx) * 0.13;
-        ry += (my - ry) * 0.13;
-        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
-        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-        requestAnimationFrame(animateCursor);
-      }
-      animateCursor();
-
-      // Cursor state on hover
-      document.querySelectorAll('a, button, .project-card, .skill-card, .cert-card, .value-card, .cstat').forEach(el => {
-        el.addEventListener('mouseenter', () => { cursor.classList.add('active'); ring.classList.add('active'); });
-        el.addEventListener('mouseleave', () => { cursor.classList.remove('active'); ring.classList.remove('active'); });
+      // Track mouse coordinates for dynamic background interactive particles
+      document.addEventListener('mousemove', (e) => {
+        mx = e.clientX;
+        my = e.clientY;
       });
 
       /* ─── TYPING ANIMATION ─── */
@@ -1355,6 +1398,22 @@ with Effective Insights
         card.addEventListener('mouseleave', () => {
           card.style.setProperty('--rx', '0deg');
           card.style.setProperty('--ry', '0deg');
+        });
+      });
+
+      /* ─── MAGNETIC HOVER EFFECT ─── */
+      document.querySelectorAll('.btn-primary, .btn-outline, .nav-cta, .hamburger, .social-link, .nav-logo, .back-to-top').forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+          const r = el.getBoundingClientRect();
+          const x = e.clientX - (r.left + r.width / 2);
+          const y = e.clientY - (r.top + r.height / 2);
+          el.style.transition = 'none';
+          el.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px) scale(1.03)`;
+        });
+        
+        el.addEventListener('mouseleave', () => {
+          el.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+          el.style.transform = '';
         });
       });
 
