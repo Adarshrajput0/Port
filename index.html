@@ -13,21 +13,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Background Orbs -->
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+    <div class="bg-orb bg-orb-3"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
     <!-- Cursor -->
     <div class="cursor" id="cursor"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
+    <!-- Progress Bar -->
+    <div id="progressBar"></div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">✉️ Email copied to clipboard!</div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+        <path d="M18 15l-6-6-6 6"/>
+      </svg>
+    </button>
+
+    <!-- Floating Social Sidebar -->
+    <aside class="social-sidebar" aria-label="Social links">
+      <a href="https://www.linkedin.com/in/adarsh-rajput06/" target="_blank" class="social-link" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/Adarshrajput0" target="_blank" class="social-link" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:adarshrajput2931@gmail.com" class="social-link social-email" id="emailCopyLink" aria-label="Email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <span>Email</span>
+      </a>
+      <div class="social-line"></div>
+    </aside>
+
     <!-- NAV -->
-    <nav>
+    <nav id="mainNav">
       <a href="#" class="nav-logo">Adarsh Kumar</a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Hire Me</a>
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="#contact" class="nav-cta">Hire Me</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </nav>
 
     <!-- HERO -->
@@ -37,7 +80,7 @@
       <div class="hero-inner">
         <div class="hero-content">
           <div class="hero-tag">Available for opportunities</div>
-          <h1 class="hero-name">Adarsh<br /><span>Kumar</span></h1>
+          <h1 class="hero-name">Adarsh<br /><span class="shimmer-text">Kumar</span></h1>
           <p class="hero-role">
             <strong>Software Developer</strong> <strong>&</strong>
             <strong>Full Stack Developer</strong>
@@ -870,7 +913,7 @@ with Effective Insights
           Campus Micro Job Platform
         </div>
 
-        <div class="project-desc">
+        <div class="project-desc"> 
           Built a full-stack web platform connecting students with short-term
           campus-based job opportunities. Implemented authentication, job
           posting, application management, and responsive UI for seamless user
@@ -1029,12 +1072,12 @@ with Effective Insights
     <div class="creator-stats-grid">
 
       <div class="cstat">
-        <div class="cstat-num">10+</div>
+        <div class="cstat-num" data-count="10" data-suffix="+">0+</div>
         <div class="cstat-label">Projects Built</div>
       </div>
 
       <div class="cstat">
-        <div class="cstat-num">300+</div>
+        <div class="cstat-num" data-count="300" data-suffix="+">0+</div>
         <div class="cstat-label">DSA Problems</div>
       </div>
 
@@ -1087,67 +1130,113 @@ with Effective Insights
       <h2 class="section-title">Let's connect.</h2>
       <p class="section-sub">
         Whether it's a collaboration, an opportunity, or just a hello — I'd love
-        to hear from you.
+        to hear from you. Send me a message directly below.
       </p>
-      <div class="contact-inner">
-        <div class="contact-links">
-          <a
-            href="https://www.linkedin.com/in/adarsh-rajput06/"
-            target="_blank"
-            class="contact-link"
-          >
-            <div class="contact-link-left">
-              <div class="contact-link-icon">💼</div>
-              <div>
-                <div class="contact-link-title">LinkedIn</div>
-                <div class="contact-link-sub">
-                  https://www.linkedin.com/in/adarsh-rajput06/
+
+      <div class="contact-layout">
+
+        <!-- LEFT: Links -->
+        <div class="contact-left">
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/adarsh-rajput06/" target="_blank" class="contact-link">
+              <div class="contact-link-left">
+                <div class="contact-link-icon">💼</div>
+                <div>
+                  <div class="contact-link-title">LinkedIn</div>
+                  <div class="contact-link-sub">linkedin.com/in/adarsh-rajput06</div>
                 </div>
               </div>
-            </div>
-            <span class="contact-link-arrow">↗</span>
-          </a>
-          <a
-            href="https://github.com/Adarshrajput0"
-            target="_blank"
-            class="contact-link"
-          >
-            <div class="contact-link-left">
-              <div class="contact-link-icon">⌨️</div>
-              <div>
-                <div class="contact-link-title">GitHub</div>
-                <div class="contact-link-sub">https://github.com/Adarshrajput0</div>
-              </div>
-            </div>
-            <span class="contact-link-arrow">↗</span>
-          </a>
-          <a
-            href="https://adarshrajput0.github.io/New-Portfolio/"
-            target="_blank"
-            class="contact-link"
-          >
-            <div class="contact-link-left">
-              <div class="contact-link-icon">🌐</div>
-              <div>
-                <div class="contact-link-title">Previous Portfolio</div>
-                <div class="contact-link-sub">
-                  adarshrajput0.github.io/New-Portfolio
+              <span class="contact-link-arrow">↗</span>
+            </a>
+            <a href="https://github.com/Adarshrajput0" target="_blank" class="contact-link">
+              <div class="contact-link-left">
+                <div class="contact-link-icon">⌨️</div>
+                <div>
+                  <div class="contact-link-title">GitHub</div>
+                  <div class="contact-link-sub">github.com/Adarshrajput0</div>
                 </div>
               </div>
-            </div>
-            <span class="contact-link-arrow">↗</span>
-          </a>
-          <a href="mailto:adarshrajput2931@gmail.com" class="contact-link">
-            <div class="contact-link-left">
-              <div class="contact-link-icon">✉️</div>
-              <div>
-                <div class="contact-link-title">Email</div>
-                <div class="contact-link-sub">Drop me a message anytime</div>
+              <span class="contact-link-arrow">↗</span>
+            </a>
+            <a href="https://adarshrajput0.github.io/New-Portfolio/" target="_blank" class="contact-link">
+              <div class="contact-link-left">
+                <div class="contact-link-icon">🌐</div>
+                <div>
+                  <div class="contact-link-title">Previous Portfolio</div>
+                  <div class="contact-link-sub">adarshrajput0.github.io/New-Portfolio</div>
+                </div>
               </div>
+              <span class="contact-link-arrow">↗</span>
+            </a>
+            <a href="mailto:adarshrajput2931@gmail.com" class="contact-link">
+              <div class="contact-link-left">
+                <div class="contact-link-icon">✉️</div>
+                <div>
+                  <div class="contact-link-title">Email</div>
+                  <div class="contact-link-sub">adarshrajput2931@gmail.com</div>
+                </div>
+              </div>
+              <span class="contact-link-arrow">↗</span>
+            </a>
+          </div>
+
+          <!-- Availability badge -->
+          <div class="availability-badge">
+            <span class="avail-dot"></span>
+            <div>
+              <div class="avail-title">Available for work</div>
+              <div class="avail-sub">Open to full-time, internships & freelance</div>
             </div>
-            <span class="contact-link-arrow">↗</span>
-          </a>
+          </div>
         </div>
+
+        <!-- RIGHT: Direct Message Form -->
+        <div class="contact-right">
+          <div class="msg-form-wrap">
+            <div class="msg-form-header">
+              <div class="msg-form-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <div>
+                <div class="msg-form-title">Send a Message</div>
+                <div class="msg-form-sub">I'll reply within 24 hours</div>
+              </div>
+            </div>
+
+            <form id="contactForm" class="msg-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cf-name">Your Name</label>
+                  <input type="text" id="cf-name" placeholder="XYZ" required autocomplete="name"/>
+                </div>
+                <div class="form-group">
+                  <label for="cf-email">Your Email</label>
+                  <input type="email" id="cf-email" placeholder="you@example.com" required autocomplete="email"/>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="cf-subject">Subject</label>
+                <input type="text" id="cf-subject" placeholder="Job Opportunity / Collaboration / Just saying hi" required/>
+              </div>
+              <div class="form-group">
+                <label for="cf-message">Message</label>
+                <textarea id="cf-message" rows="5" placeholder="Tell me about your project, idea, or opportunity..." required></textarea>
+              </div>
+              <button type="submit" class="form-submit" id="formSubmit">
+                <span class="form-submit-text">Send Message</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <line x1="22" y1="2" x2="11" y2="13"/>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+              </button>
+              <p class="form-note">* Opens your email client with pre-filled message</p>
+            </form>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1161,99 +1250,301 @@ with Effective Insights
     </footer>
 
     <script>
-      // Profile photo upload
-      const photoInput = document.getElementById("photoInput");
-      const profileImg = document.getElementById("profileImg");
-      const picPlaceholder = document.getElementById("picPlaceholder");
-      photoInput.addEventListener("change", function () {
-        const file = this.files[0];
-        if (!file) return;
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          profileImg.src = e.target.result;
-          profileImg.style.display = "block";
-          picPlaceholder.style.display = "none";
-        };
-        reader.readAsDataURL(file);
-      });
+      /* ─── PARTICLE CANVAS ─── */
+      const canvas = document.getElementById('particleCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
 
-      // Custom cursor
-      const cursor = document.getElementById("cursor");
-      const ring = document.getElementById("cursorRing");
-      let mx = 0,
-        my = 0,
-        rx = 0,
-        ry = 0;
-      document.addEventListener("mousemove", (e) => {
-        mx = e.clientX;
-        my = e.clientY;
-      });
+      class Particle {
+        constructor() { this.reset(); }
+        reset() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 1.5 + 0.3;
+          this.speedX = (Math.random() - 0.5) * 0.4;
+          this.speedY = -Math.random() * 0.5 - 0.1;
+          this.opacity = Math.random() * 0.5 + 0.1;
+          this.color = Math.random() > 0.5
+            ? `rgba(232,201,126,${this.opacity})`
+            : `rgba(255,255,255,${this.opacity * 0.4})`;
+        }
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          if (this.y < -5 || this.x < -5 || this.x > canvas.width + 5) this.reset();
+        }
+        draw() {
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = this.color;
+          ctx.fill();
+        }
+      }
+      for (let i = 0; i < 90; i++) particles.push(new Particle());
+      function animateParticles() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => { p.update(); p.draw(); });
+        requestAnimationFrame(animateParticles);
+      }
+      animateParticles();
+
+      /* ─── CUSTOM CURSOR ─── */
+      const cursor = document.getElementById('cursor');
+      const ring = document.getElementById('cursorRing');
+      let mx = 0, my = 0, rx = 0, ry = 0;
+      document.addEventListener('mousemove', (e) => { mx = e.clientX; my = e.clientY; });
       function animateCursor() {
-        rx += (mx - rx) * 0.15;
-        ry += (my - ry) * 0.15;
-        cursor.style.left = mx + "px";
-        cursor.style.top = my + "px";
-        ring.style.left = rx + "px";
-        ring.style.top = ry + "px";
+        rx += (mx - rx) * 0.13;
+        ry += (my - ry) * 0.13;
+        cursor.style.left = mx + 'px'; cursor.style.top = my + 'px';
+        ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
         requestAnimationFrame(animateCursor);
       }
       animateCursor();
 
-      // Reveal on scroll
-      const reveals = document.querySelectorAll(".reveal");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      reveals.forEach((el) => observer.observe(el));
-
-      // Skill bar animation
-      const barObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.querySelectorAll(".skill-bar-fill").forEach((bar) => {
-                bar.classList.add("animate");
-              });
-            }
-          });
-        },
-        { threshold: 0.3 },
-      );
-      document
-        .querySelectorAll(".skill-card")
-        .forEach((el) => barObserver.observe(el));
-
-      // Smooth nav active
-      window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav");
-        nav.style.boxShadow =
-          window.scrollY > 60 ? "0 4px 40px rgba(0,0,0,0.4)" : "none";
+      // Cursor state on hover
+      document.querySelectorAll('a, button, .project-card, .skill-card, .cert-card, .value-card, .cstat').forEach(el => {
+        el.addEventListener('mouseenter', () => { cursor.classList.add('active'); ring.classList.add('active'); });
+        el.addEventListener('mouseleave', () => { cursor.classList.remove('active'); ring.classList.remove('active'); });
       });
-    </script>
 
-    <script>
-  const certCards = document.querySelectorAll(".cert-card");
-
-  certCards.forEach(card => {
-    card.addEventListener("click", () => {
-
-      const pdfPath = card.getAttribute("data-pdf");
-
-      if (pdfPath) {
-        window.open(pdfPath, "_blank");
-      } else {
-        alert("Certificate PDF not found!");
+      /* ─── TYPING ANIMATION ─── */
+      const roleEl = document.querySelector('.hero-role');
+      if (roleEl) {
+        const phrases = ['Software Developer', 'Full Stack Developer', 'Problem Solver', 'MERN Stack Developer'];
+        let pi = 0, ci = 0, deleting = false;
+        const typingCursor = document.createElement('span');
+        typingCursor.className = 'typing-cursor';
+        const typed = document.createElement('strong');
+        roleEl.innerHTML = '';
+        roleEl.appendChild(typed);
+        roleEl.appendChild(typingCursor);
+        function typeLoop() {
+          const full = phrases[pi];
+          if (!deleting) {
+            typed.textContent = full.slice(0, ++ci);
+            if (ci === full.length) { deleting = true; return setTimeout(typeLoop, 1800); }
+          } else {
+            typed.textContent = full.slice(0, --ci);
+            if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+          }
+          setTimeout(typeLoop, deleting ? 50 : 90);
+        }
+        typeLoop();
       }
 
-    });
-  });
-</script>
+      /* ─── 3D TILT & GLOW CARDS ─── */
+      document.querySelectorAll('.project-card, .skill-card, .cert-card, .value-card, .cstat').forEach(card => {
+        card.classList.add('tilt-card');
+        card.addEventListener('mousemove', (e) => {
+          const r = card.getBoundingClientRect();
+          const x = e.clientX - r.left, y = e.clientY - r.top;
+          card.style.setProperty('--mx', x + 'px');
+          card.style.setProperty('--my', y + 'px');
+          const rx2 = ((y - r.height/2) / r.height) * -10;
+          const ry2 = ((x - r.width/2) / r.width) * 10;
+          card.style.setProperty('--rx', rx2 + 'deg');
+          card.style.setProperty('--ry', ry2 + 'deg');
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.setProperty('--rx', '0deg');
+          card.style.setProperty('--ry', '0deg');
+        });
+      });
+
+      /* ─── SCROLL OBSERVER ─── */
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      // Stagger child items inside each reveal section
+      document.querySelectorAll('.skills-grid .skill-card, .projects-grid .project-card, .cert-grid .cert-card, .about-values .value-card, .creator-stats-grid .cstat').forEach((el, i) => {
+        el.classList.add('reveal-child');
+        el.style.setProperty('--delay', (i * 0.1) + 's');
+        io.observe(el);
+      });
+
+      /* ─── SKILL BAR ANIMATION ─── */
+      const barObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) e.target.querySelectorAll('.skill-bar-fill').forEach(b => b.classList.add('animate'));
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll('.skill-card').forEach(el => barObs.observe(el));
+
+      /* ─── NAV SCROLL EFFECTS ─── */
+      const nav = document.querySelector('nav');
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      window.addEventListener('scroll', () => {
+        // Scrolled class
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+        // Active nav link highlight
+        let current = '';
+        sections.forEach(s => { if (window.scrollY >= s.offsetTop - 200) current = s.id; });
+        navLinks.forEach(a => {
+          a.classList.toggle('nav-active', a.getAttribute('href') === '#' + current);
+        });
+      });
+
+      /* ─── CERTIFICATE CARDS ─── */
+      document.querySelectorAll('.cert-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const pdfPath = card.getAttribute('data-pdf');
+          if (pdfPath) window.open(pdfPath, '_blank');
+          else alert('Certificate PDF not found!');
+        });
+      });
+
+      /* ─── PROFILE PHOTO UPLOAD ─── */
+      const photoInput = document.getElementById('photoInput');
+      if (photoInput) {
+        photoInput.addEventListener('change', function() {
+          const file = this.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            const img = document.querySelector('.profile-pic-img');
+            if (img) img.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      /* ─── READING PROGRESS BAR ─── */
+      const progressBar = document.getElementById('progressBar');
+      function updateProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        if (progressBar) progressBar.style.width = pct + '%';
+      }
+      window.addEventListener('scroll', updateProgress);
+
+      /* ─── BACK TO TOP ─── */
+      const btt = document.getElementById('backToTop');
+      if (btt) {
+        window.addEventListener('scroll', () => {
+          btt.classList.toggle('visible', window.scrollY > 500);
+        });
+        btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+      }
+
+      /* ─── HAMBURGER MOBILE NAV ─── */
+      const hamburger = document.getElementById('hamburger');
+      const navLinksEl = document.getElementById('navLinks');
+      if (hamburger && navLinksEl) {
+        hamburger.addEventListener('click', () => {
+          hamburger.classList.toggle('open');
+          navLinksEl.classList.toggle('open');
+        });
+        // Close on nav link click
+        navLinksEl.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            navLinksEl.classList.remove('open');
+          });
+        });
+      }
+
+      /* ─── EMAIL COPY TOAST ─── */
+      const emailLink = document.getElementById('emailCopyLink');
+      const toast = document.getElementById('toast');
+      if (emailLink && toast) {
+        emailLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          navigator.clipboard.writeText('adarshrajput2931@gmail.com').then(() => {
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+          }).catch(() => { window.location.href = 'mailto:adarshrajput2931@gmail.com'; });
+        });
+      }
+
+      /* ─── COUNT-UP ANIMATION ─── */
+      function countUp(el) {
+        const target = parseInt(el.dataset.count);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const step = duration / target;
+        let current = 0;
+        el.textContent = '0' + suffix;
+        const timer = setInterval(() => {
+          current++;
+          el.textContent = current + suffix;
+          if (current >= target) clearInterval(timer);
+        }, step);
+      }
+      const countObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting && e.target.dataset.count) {
+            countUp(e.target);
+            countObs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      document.querySelectorAll('[data-count]').forEach(el => countObs.observe(el));
+
+      /* ─── CONTACT FORM ─── */
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        const submitBtn = document.getElementById('formSubmit');
+        const submitText = submitBtn.querySelector('.form-submit-text');
+
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name    = document.getElementById('cf-name').value.trim();
+          const email   = document.getElementById('cf-email').value.trim();
+          const subject = document.getElementById('cf-subject').value.trim();
+          const message = document.getElementById('cf-message').value.trim();
+
+          // Simple validation
+          if (!name || !email || !subject || !message) {
+            contactForm.querySelectorAll('input, textarea').forEach(f => {
+              f.classList.toggle('error', !f.value.trim());
+            });
+            return;
+          }
+
+          // Clear errors
+          contactForm.querySelectorAll('.error').forEach(f => f.classList.remove('error'));
+
+          // Loading state
+          submitBtn.classList.add('loading');
+          submitText.textContent = 'Opening email...';
+
+          const body = `Hi Adarsh,\n\nMy name is ${name}.\n\n${message}\n\nBest regards,\n${name}\n${email}`;
+          const mailto = `mailto:adarshrajput2931@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+          setTimeout(() => {
+            window.location.href = mailto;
+            submitBtn.classList.remove('loading');
+            submitText.textContent = '✓ Email client opened!';
+            submitBtn.style.background = 'rgba(126,201,160,0.15)';
+            submitBtn.style.borderColor = 'rgba(126,201,160,0.4)';
+            submitBtn.style.color = '#7ec9a0';
+            setTimeout(() => {
+              submitText.textContent = 'Send Message';
+              submitBtn.style = '';
+              contactForm.reset();
+            }, 4000);
+          }, 600);
+        });
+
+        // Remove error state on input
+        contactForm.querySelectorAll('input, textarea').forEach(f => {
+          f.addEventListener('input', () => f.classList.remove('error'));
+          f.addEventListener('focus', () => f.closest('.form-group').classList.add('focused'));
+          f.addEventListener('blur', () => f.closest('.form-group').classList.remove('focused'));
+        });
+      }
+
+    </script>
   </body>
 </html>
